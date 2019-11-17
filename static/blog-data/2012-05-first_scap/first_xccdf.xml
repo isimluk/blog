@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Benchmark xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://checklists.nist.gov/xccdf/1.1" id="first"
+    xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 xccdf-1.1.4.xsd"
+    resolved="false" xml:lang="en-US">
+  <status date="2012-05-07">draft</status>
+  <title>My First Benchmark</title>
+  <version>1.0</version>
+  <Rule id="no_hashes_outside_shadow" selected="true">
+    <title>Verify All Account Password Hashes are Shadowed</title>
+    <description>To ensure that no password hashes are stored in
+      <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml">/etc/passwd</xhtml:code>, the following command should have no output:
+      <xhtml:pre xmlns:xhtml="http://www.w3.org/1999/xhtml"># awk -F: '($2 != "x") {print}' /etc/passwd</xhtml:pre>
+    </description>
+    <reference href="http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf">IA-5</reference>
+    <rationale>
+      The hashes for all user account passwords should be stored in
+      the file <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml">/etc/shadow</xhtml:code> and never in <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml">/etc/passwd</xhtml:code>,
+      which is readable by all users.
+    </rationale>
+    <ident system="http://cce.mitre.org">CCE-14300-8</ident>
+    <check xmlns:xhtml="http://www.w3.org/1999/xhtml" system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+      <check-content-ref href="first_oval.xml" name="oval:my_first:def:1"/>
+    </check>
+  </Rule>
+</Benchmark>
+
