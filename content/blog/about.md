@@ -4,7 +4,7 @@ date = "2019-11-17"
 aliases = ["about-us","about","contact"]
 +++
 
-Versatile software engineer with a broad range of interests and experience.
+I am professional, I have a website.
 
 Ansible, Ansible Tower, Apache, Assembler (IBM PC architecture), autoconf,
 Bash, Bootstrap, Buildah, C, C++, CMake, CoreOS,
